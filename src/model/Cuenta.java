@@ -1,4 +1,5 @@
 package model;
+ 
 
 public class Cuenta {
     //Numero identificador de la cuenta
@@ -11,6 +12,10 @@ public class Cuenta {
     private boolean activo;
     //indicador de que la cuente permite deber saldo al banco
     private boolean allowCredits;
+    //PIN de la cuenta (única), se genera al crear la cuenta y no se cambia nunca.
+    // Devuelve un número aleatorio entre dos valores 
+    // (Math.random() * (<número_máximo + 1> - <número_mínimo>)) + <numero_mínimo>;
+    private final int PIN = (int) (Math.random() * (9999 + 1 - 1000)) + 1000;
 
     public Cuenta() {
         this.IBAN = "";
@@ -59,6 +64,8 @@ public class Cuenta {
         return this.saldo;
     }
 
-
+    public int getPIN() {
+        return this.PIN;
+    }
     
 }
