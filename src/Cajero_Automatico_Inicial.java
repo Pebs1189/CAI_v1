@@ -93,6 +93,7 @@ public class Cajero_Automatico_Inicial {
                                 break;
                             case 4:
                                 System.out.println("");
+                                tecl2.close();
                                 break;
                             default:
                                 //TODO
