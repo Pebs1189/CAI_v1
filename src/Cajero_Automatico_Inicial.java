@@ -42,16 +42,17 @@ public class Cajero_Automatico_Inicial {
             //Lectura del teclado
             menu = tecl.nextInt();
 
+            //declaramos segundo scanner
+            Scanner tecl2 = new Scanner(System.in);
+            
             //opciones del menu
             switch (menu) {
                 case 1:
                     System.out.println("Login PABS Bank");
-                    System.out.println("Introduce el IBAN de la cuenta: ");
-                    //TODO
-                    //Corregir esto, para que se lea primero el iban y luego el pin por teclado.
-                    String IBAN = tecl.nextLine();
+                    System.out.println("Introduce el IBAN de la cuenta: "); 
+                    String IBAN = tecl2.nextLine(); 
                     System.out.println("Introduce el PIN");
-                    int PIN = tecl.nextInt(); 
+                    int PIN = tecl2.nextInt();  
 
                     /*
                      * Validar que el IBAN y el PIN es correcto, en ése orden.
