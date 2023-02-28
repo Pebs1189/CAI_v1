@@ -1,5 +1,6 @@
 package model;
- 
+
+import java.util.Objects;
 
 public class Cuenta {
     //Numero identificador de la cuenta
@@ -16,24 +17,26 @@ public class Cuenta {
     // Devuelve un número aleatorio entre dos valores 
     // (Math.random() * (<número_máximo + 1> - <número_mínimo>)) + <numero_mínimo>;
     private final int PIN = (int) (Math.random() * (9999 + 1 - 1000)) + 1000;
+    private final int preIBAN = (int) (Math.random() * (99999999 + 1 - 10000000)) + 10000000;
 
     public Cuenta() {
-        this.IBAN = "";
+        this.IBAN = "ES34"+preIBAN;
         this.titular = null;
         this.saldo = 0.0;
         this.activo = false;
     }
 
-    public void setIBAN(String iban){
-        this.IBAN = iban;
-    }
-
     public void setTitular(Cliente cliente) {
-        this.titular = cliente;
+        if (Objects.isNull(this.titular)) {
+            this.titular = cliente;
+            this.activo = true;
+        } else {
+            System.out.println("La cuenta ya tiene duenyo.");
+        }
     }
 
     public void setActiveAccount(boolean activo) {
-        this.activo = activo;
+        this.activo = activo; 
     }
 
     public void addSaldo(double ingreso) {
@@ -56,7 +59,7 @@ public class Cuenta {
         return this.IBAN;
     }
 
-    public Cliente getClientes() {
+    public Cliente getCliente() {
         return this.titular;
     }
 
@@ -68,4 +71,9 @@ public class Cuenta {
         return this.PIN;
     }
     
+    //Comprueba si el PIN introducido existe
+    public boolean existPIN(int pin) {
+        return this.PIN == pin ? true : false;
+    }
+
 }

@@ -17,10 +17,11 @@ public class Cliente {
         this.cuentaPersonal = new HashMap<Integer,Cuenta>(); 
     }
 
-    public Cliente(String nombre, String apellidos, int edad) {
+    public Cliente(String nombre, String apellidos, int edad, String dni) {
         this.nombre = nombre;
         this.apellidos = apellidos;
         this.edad = edad;
+        this.DNI = dni;
         this.cuentaPersonal = new HashMap<Integer,Cuenta>();
     }
 
