@@ -59,6 +59,10 @@ public class Cuenta {
         return this.IBAN;
     }
 
+    public boolean compareToIban(String iban) {
+        return this.IBAN.equals(iban) ? true : false;
+    }
+
     public Cliente getCliente() {
         return this.titular;
     }
@@ -71,6 +75,10 @@ public class Cuenta {
         return this.PIN;
     }
     
+    public boolean compareToPin(int pin) {
+        return this.PIN == pin ? true : false;
+    }
+
     //Comprueba si el PIN introducido existe
     public boolean existPIN(int pin) {
         return this.PIN == pin ? true : false;

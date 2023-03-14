@@ -8,7 +8,7 @@ public class Cajero_Automatico_Inicial {
     public static void main(String[] args) throws Exception {
         //Creamos el cliente
         Cliente arturo = new Cliente("Arturo","Garcia",25, "X234233X"); 
-        System.out.println("Se crea la cuenta de Artura Garcia.");
+        System.out.println("Se crea la cuenta de Arturo Garcia.");
 
         //Creamos la cuenta
         Cuenta arturoAccount = new Cuenta();
@@ -57,7 +57,7 @@ public class Cajero_Automatico_Inicial {
                     /*
                      * Validar que el IBAN y el PIN es correcto, en ése orden.
                      */
-                    //TODO
+                    //TODO task-1
                     //Code a implementar:
                     //Comprobamos con el cajero si existe una cuenta con el IBAN leido
                     //Comprobamos si el PIN de la cuenta es correcta
@@ -72,42 +72,61 @@ public class Cajero_Automatico_Inicial {
                         System.out.println("1. Consultar Saldo");
                         System.out.println("2. Sacar dinero");
                         System.out.println("3. Ingresar dinero");
-                        System.out.println("4. Atras");
+                        System.out.println("4. Realizar transferencia");
+                        System.out.println("5. Atras");
                         System.out.println("Elija la operacion a realizar...");
 
                         //leemos el valor por teclado.
-                        menu_cuenta = tecl.nextInt();
+                        menu_cuenta = tecl2.nextInt();
 
                         switch (menu_cuenta) {
                             case 1:
-                                //TODO
+                                //TODO task-2
                                 //Code a implementar
+                                System.out.println("Nombre Cliente: Pablo E. Barba Soliz.");
+                                System.out.println("Número de cuenta: ES23123456789");
+                                System.out.println("Saldo disponible: 10000€");
                                 break;
                             case 2:
-                                //TODO
+                                System.out.println("Cuánto dinero quieres sacar?");
+                                System.out.println("1. 10€");
+                                System.out.println("2. 20€");
+                                System.out.println("3. 50€");
+                                System.out.println("4. 100€");
+                                System.out.println("5. Otra cantidad");
+
+                                //TODO task-5
                                 //Code a implementar
+                                //Realizar lo que se pide en el documento de task-5
+
                                 break;
                             case 3:
-                                //TODO
+                                //TODO task-3
                                 //Code a implementar
+                                System.out.println("Inserte su dinero: ");
+                                //leer desde teclado el importe a ingresar en la cuenta
+                                //guardar lo leido en la cuenta del cliente (el logeado)
+                                //confirmar que se ha ingresado con exito
                                 break;
                             case 4:
-                                System.out.println("");
-                                tecl2.close();
+                                //TODO task-4
+                                //Code a implementar
+                                System.out.println("Escriba el IBAN de la cuenta destino: ");
+                                break;
+                            case 5:
+                                System.out.println("Volviendo...");
                                 break;
                             default:
-                                //TODO
-                                //Code a implementar
+                                System.out.println("Introduce una opcion correcta.");
                                 break;
                         }
                     }
-                    
-
                     break;
                 case 2:
                     System.out.println("Gracias! vuelva pronto.");
                      //cerramos el scanner
                     tecl.close();
+                    tecl2.close();
                     break;
                 default:
                     System.out.println("Introduzca un valor correcto.");
@@ -115,6 +134,6 @@ public class Cajero_Automatico_Inicial {
             }
 
             System.out.println("");
-        };       
+        }       
     }
 }
